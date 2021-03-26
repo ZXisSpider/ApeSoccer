@@ -48,22 +48,22 @@ if __name__ == '__main__':
     Config = Soccerconfig
 
 
-    def file_selector(folder_path='.'):
-        filenames = os.listdir(folder_path)
-        selected_filename = st.selectbox('Select a file', filenames)
-        return os.path.join(folder_path, selected_filename)
-
-
-    filename = file_selector()
-    st.write('You selected `%s`' % filename)
+    # def file_selector(folder_path='.'):
+    #     filenames = os.listdir(folder_path)
+    #     selected_filename = st.selectbox('Select a file', filenames)
+    #     return os.path.join(folder_path, selected_filename)
+    #
+    #
+    # filename = file_selector()
+    # st.write('You selected `%s`' % filename)
 
     cwd = os.getcwd()
-    file_path = os.path.join(cwd, './SoccerProject/a.json')
+    file_path = os.path.join(cwd, './SoccerProject/spiders/a.json')
 
-    openfile = open(file_path)
-    jsondata = json.load(openfile)
-    # df = pd.read_json("./a.json", encoding="utf-8")
-    df = pd.DataFrame(jsondata)
+    # openfile = open(file_path)
+    # jsondata = json.load(openfile)
+    df = pd.read_json(file_path, encoding="utf-8", orient='records')
+    # df = pd.DataFrame(jsondata)
 
     option1_l = st.sidebar.selectbox(
         '输入主队所属联赛名称',
