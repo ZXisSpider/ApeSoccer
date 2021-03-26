@@ -3,6 +3,7 @@ import numpy as np
 import pandas as pd
 import time
 import codecs
+import json
 from config import Soccerconfig
 from pyecharts import options as opts
 from pyecharts.charts import Bar
@@ -45,7 +46,10 @@ if __name__ == '__main__':
     st.title('阿猿战术板')
     Config = Soccerconfig
 
-    df = pd.read_json("./a.json", encoding="utf-8")
+    openfile = open('a.json')
+    jsondata = json.load(openfile)
+    # df = pd.read_json("./a.json", encoding="utf-8")
+    df = pd.DataFrame(jsondata)
 
     option1_l = st.sidebar.selectbox(
         '输入主队所属联赛名称',
