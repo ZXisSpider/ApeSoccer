@@ -46,7 +46,7 @@ if __name__ == '__main__':
     st.title('阿猿战术板')
     Config = Soccerconfig
 
-    openfile = open('a.json')
+    openfile = open('./a.json')
     jsondata = json.load(openfile)
     # df = pd.read_json("./a.json", encoding="utf-8")
     df = pd.DataFrame(jsondata)
