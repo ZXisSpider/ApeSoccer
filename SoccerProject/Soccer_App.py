@@ -1,3 +1,4 @@
+import os
 import streamlit as st
 import numpy as np
 import pandas as pd
@@ -46,7 +47,20 @@ if __name__ == '__main__':
     st.title('阿猿战术板')
     Config = Soccerconfig
 
-    openfile = open('./a.json')
+
+    def file_selector(folder_path='.'):
+        filenames = os.listdir(folder_path)
+        selected_filename = st.selectbox('Select a file', filenames)
+        return os.path.join(folder_path, selected_filename)
+
+
+    filename = file_selector()
+    st.write('You selected `%s`' % filename)
+
+    cwd = os.getcwd()
+    file_path = os.path.join(cwd, 'a.json')
+
+    openfile = open(file_path)
     jsondata = json.load(openfile)
     # df = pd.read_json("./a.json", encoding="utf-8")
     df = pd.DataFrame(jsondata)
