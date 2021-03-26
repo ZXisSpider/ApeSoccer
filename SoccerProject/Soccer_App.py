@@ -45,7 +45,7 @@ if __name__ == '__main__':
     st.title('阿猿战术板')
     Config = Soccerconfig
 
-    df = pd.read_json("spiders/a.json", encoding="utf-8", orient='records')
+    df = pd.read_json("spiders/a.json", lines=True, encoding="utf-8", orient='records')
 
     option1_l = st.sidebar.selectbox(
         '输入主队所属联赛名称',
