@@ -426,4 +426,4 @@ if __name__ == '__main__':
         )
         st_pyecharts(result)
 
-    st.image('./Resources/ape_board_dark.jpg')
+    st.image('./SoccerProject/Resources/ape_board_dark.jpg')
