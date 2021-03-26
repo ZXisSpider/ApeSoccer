@@ -58,7 +58,7 @@ if __name__ == '__main__':
     st.write('You selected `%s`' % filename)
 
     cwd = os.getcwd()
-    file_path = os.path.join(cwd, 'a.json')
+    file_path = os.path.join(cwd, './SoccerProject/a.json')
 
     openfile = open(file_path)
     jsondata = json.load(openfile)
