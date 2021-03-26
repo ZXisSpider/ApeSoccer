@@ -8,7 +8,6 @@ from pyecharts import options as opts
 from pyecharts.charts import Bar
 from streamlit_echarts import st_pyecharts
 from pyecharts.charts import Pie
-from pandas import json_normalize
 from pyecharts.charts import Scatter
 from pyecharts.commons.utils import JsCode
 from pyecharts.globals import RenderType
